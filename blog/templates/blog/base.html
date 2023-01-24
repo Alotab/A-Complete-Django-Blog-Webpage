@@ -1,0 +1,88 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'blog/main.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://kit.fontawesome.com/8d6d017602.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Poppins:wght@200;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+
+
+    <div class="wrapper">
+
+        <!-- Navigation section -->
+        <header>
+            <div class="main-logo">
+                <a href="#"><p>Koosplash</p></a>
+            </div>
+    
+            <div class="subheader">
+                <div class="search-logo">
+                    <a class="search-logo-icon" href="#">
+                        <p>Search</p>
+                        <i class="fa fa-search"></i>
+                    </a>
+                </div>
+                <nav>
+                    <ul>
+                        <li><a class="active" href="#">Home</a></li>
+                        <li><a href="#">Latest</a></li>
+                        <li><a href="#">Politics</a></li>
+                        <li><a href="#">Tech</a></li>
+                        <li><a href="#">How To</a></li>
+                        <li><a href="#">Entertainment</a></li>
+                        <li><a href="#">Entertainment</a></li>
+                    </ul>
+                </nav>
+                <div class="profile-icon">
+                    <a href="#">
+                        <i class="fa fa-user-circle-o"></i>
+                    </a>
+                </div>
+    
+            </div>
+        </header>
+
+        <!-- Main content -->
+
+        <div class="main">
+
+            {% block content %}
+            {% endblock %}
+        </div>
+
+
+        <!-- footer section -->
+        <footer>
+            <div class="blog-name">
+                <h1>KOOSPLASH</h1>
+                <p>Copyright @ 2023, All rights reserved</p>
+            </div>
+
+            <div class="subscrivbe-newsletter">
+                <h2>Newsletter</h2>
+                <p>Sign up with your email to join our mailing list</p>
+                <p class="subscribe-email">Email Address:</p>
+
+                <form class="form" action="#">
+                    <div class="form-box"> 
+                        <input type="email" name="EmailAddress" placeholder="Enter your email">
+                        <button type="submit">Subscribe</button>
+                    </div>
+
+                </form>
+            </div>
+        </footer>
+
+    </div>
+</body>
+</html>

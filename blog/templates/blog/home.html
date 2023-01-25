@@ -4,89 +4,52 @@
 {% block content %}
 
 
+
 <div class="left-col">
     <p class="side-Trending">Trending</p>
+    {% for post in trending_posts %}
     <div class="trending-post">
         <a href="#">
-            <h2 class="trending-headline">Netflix Rebel Moon is a Two-Part Epic Space Opera</h2>
+            <h2 class="trending-headline">{{ post.title }}</h2>
         </a>
         <p class="time-post">2 mins ago</p>
     </div>
-    <div class="trending-post">
-        <a href="#">
-            <h2 class="trending-headline">Netflix Rebel Moon is a Two-Part Epic Space Opera Rebel Moon is a Two-Part Epic</h2>
-        </a>
-        <p class="time-post">2 mins ago</p>
-    </div>
-    <div class="trending-post">
-        <a href="#">
-            <h2 class="trending-headline">Netflix Rebel Moon is a Two-Part Epic Space Opera Rebel Moon is a Two-Part Epic</h2>
-        </a>
-        <p class="time-post">2 mins ago</p>
-    </div>
-    <div class="trending-post">
-        <a href="#">
-            <h2 class="trending-headline">Netflix Rebel Moon is a Two-Part Epic Space Opera Rebel Moon is a Two-Part Epic</h2>
-        </a>
-        <p class="time-post">2 mins ago</p>
-    </div>
-    <div class="trending-post">
-        <a href="#">
-            <h2 class="trending-headline">Netflix Rebel Moon is a Two-Part Epic Space Opera Rebel Moon is a Two-Part Epic</h2>
-        </a>
-        <p class="time-post">2 mins ago</p>
-    </div>
+    {% endfor %}
+ 
 
 </div>
 
 
 <div class="middle-col">
+    {% for post in latest_post %}
     <a href="#">
-        <h1>The Army Corps of Engineers Made a 2023 Cat Calendar, and It's Glorious</h1>
+        <h1>{{ post.title}}</h1>
         <div class="article-snippet">
-            <p>Enormous cats are wreaking havoc on dams, jetties, and heavy machinery. Its creator told Gizmodo, "It’s not a masterclass on Photoshop. I mean, obviously."</p>
+            <p>{{post.snippet}}</p>
         </div>
     </a>
     <div class="author-name">
         <a href="#">
-            John School
+            {{ post.author }}
         </a>
         <p>10 Hours ago</p>
     </div>
     <a href="#">
-        <img src="/images/main-artcle.png" alt="artile-image">
+        <img src="{{post.image.url}}" alt="artile-image">
     </a>
+    {% endfor %}
 </div>
 
 <div class="right-col">
+    {% for post in top_stories %}
+    <div class=blog-post>
+        <a class="blog-post-news" href="#">
+            <img class="side-news" src="{{ post.image.url}}" alt="latest">
+             <p>{{post.snippet }}</p>
+        </a>
+    </div>
+    {% endfor %}
 
-    <div class=blog-post>
-        <a class="blog-post-news" href="#">
-            <img class="side-news" src="/images/lat1.png" alt="latest">
-             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint adipisci est</p>
-        </a>
-    </div>
-    <div class=blog-post>
-        <a class="blog-post-news" href="#">
-            <img class="side-news" src="/images/lat2.png" alt="latest">
-             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint adipisci est</p>
-        </a>
-    </div>
-    <div class=blog-post>
-        <a class="blog-post-news" href="#">
-            <img class="side-news" src="/images/lat3.png" alt="latest">
-             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint adipisci</p>
-        </a>
-    </div>
-    <div class=blog-post>
-        <a class="blog-post-news" href="#">
-            <img class="side-news" src="/images/lat4.png" alt="latest">
-             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint </p>
-        </a>
-    </div>
-
-
-    
 </div>
 </div>
 
@@ -311,6 +274,8 @@
         </div>
     </div>
 </section>
+
+
 
 
 {% endblock content %}

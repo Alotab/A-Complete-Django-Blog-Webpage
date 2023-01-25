@@ -61,77 +61,26 @@
     <h2><span>Politics</span></h2>
     <div class="politics-section">
         <div class="politics-post">
+            {% for post in tech_post %}
             <a class="politics-article-snippet" href="#">
-                <img src="/images/po1.png" alt="entertainment-man">
+                <img src="{{ post.image.url }}" alt="entertainment-man">
             </a>
             <div class="politics-article-snippet">
                 <a href="#">
-                    <p>Rihanna reveals adorable baby boy on tiktok adorable baby boy on tiktok</p>
+                    <p>{{ post.snippet }}</p>
                 </a>
             </div>
             <div class="politics-post-author">
                 <a class="author" href="#">
-                    <img src="images/ent.png" alt="author">
-                    <p>James Author</p>
+                    <img src="{{ post.image.url }}" alt="author">
+                    <p>{{ post.author }}</p>
                 </a>
                 <p  class="date">20 Jan 2030</p>
             </div>
-        </div>
-
-        <div class="politics-post">
-            <a class="politics-article-snippet" href="#">
-                <img src="/images/po2.png" alt="entertainment-man">
-            </a>
-            <div class="politics-article-snippet">
-                <a href="#">
-                    <p>Rihanna reveals adorable baby boy on tiktok adorable baby boy on tiktok</p>
-                </a>
-            </div>
-            <div class="politics-post-author">
-                <a class="author" href="#">
-                    <img src="images/ent2.png" alt="author">
-                    <p>James Author</p>
-                </a>
-                <p  class="date">20 Jan 2030</p>
-            </div>
-        </div>
-
-        <div class="politics-post">
-            <a class="politics-article-snippet" href="#">
-                <img src="/images/po3.png" alt="entertainment-man">
-            </a>
-            <div class="politics-article-snippet">
-                <a href="#">
-                    <p>Rihanna reveals adorable baby boy on tiktok adorable baby boy on tiktok</p>
-                </a>
-            </div>
-            <div class="politics-post-author">
-                <a class="author" href="#">
-                    <img src="images/ent3.png" alt="author">
-                    <p>James Author</p>
-                </a>
-                <p  class="date">20 Jan 2030</p>
-            </div>
-        </div>
-
-        <div class="politics-post">
-            <a class="politics-article-snippet" href="#">
-                <img src="/images/po4.png" alt="entertainment-man">
-            </a>
-            <div class="politics-article-snippet">
-                <a href="#">
-                    <p>Rihanna reveals adorable baby boy on tiktok adorable baby boy on tiktok</p>
-                </a>
-            </div>
-            <div class="politics-post-author">
-                <a class="author" href="#">
-                    <img src="images/po4.png" alt="author">
-                    <p>James Author</p>
-                </a>
-                <p  class="date">20 Jan 2030</p>
-            </div>
+            {% endfor %}
         </div>
     </div>
+
 </section>
 
 <section class="entertainment">

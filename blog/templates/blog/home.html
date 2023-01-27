@@ -5,262 +5,94 @@
 
 
 
-<div class="left-col">
-    <p class="side-Trending">Trending</p>
-    {% for post in trending_posts %}
-    <div class="trending-post">
-        <a href="#">
-            <h2 class="trending-headline">{{ post.title }}</h2>
-        </a>
-        <p class="time-post">2 mins ago</p>
-    </div>
-    {% endfor %}
- 
-
-</div>
-
-
-<div class="middle-col">
-    {% for post in latest_post %}
-    <a href="#">
-        <h1>{{ post.title}}</h1>
-        <div class="article-snippet">
-            <p>{{post.snippet}}</p>
-        </div>
-    </a>
-    <div class="author-name">
-        <a href="#">
-            {{ post.author }}
-        </a>
-        <p>10 Hours ago</p>
-    </div>
-    <a href="#">
-        <img src="{{post.image.url}}" alt="artile-image">
-    </a>
-    {% endfor %}
-</div>
-
-<div class="right-col">
-    {% for post in similar_posts %}
-    <div class=blog-post>
-        <a class="blog-post-news" href="#">
-            <img class="side-news" src="{{ post.image.url}}" alt="latest">
-             <p>{{post.snippet }}</p>
-        </a>
-    </div>
-    {% endfor %}
-
-</div>
-</div>
-
-
-<div class="main-section">
-
-        <!-- <section class="politics">
-    
-    <h2><span>Politics</span></h2>
-    <div class="politics-section">
-        <div class="politics-post">
-            {% for post in similar_posts %}
-            <a class="politics-article-snippet" href="#">
-                <img src="{{ post.image.url }}" alt="entertainment-man">
-            </a>
-            <div class="politics-article-snippet">
+    <div class="main"> 
+        <!-- left column post -->
+        <div class="left-col">
+            <p class="side-Trending">Trending</p>
+            {% for post in trending_posts %}
+            <div class="trending-post">
                 <a href="#">
-                    <p>{{ post.snippet }}</p>
+                    <h2 class="trending-headline">{{ post.title }}</h2>
                 </a>
+                <p class="time-post">2 mins ago</p>
             </div>
-            <div class="politics-post-author">
-                <a class="author" href="#">
-                    <img src="{{ post.image.url }}" alt="author">
-                    <p>{{ post.author }}</p>
+            {% endfor %}
+        </div>
+
+        <!-- middle column post -->
+        <div class="middle-col">
+            {% for post in latest_post %}
+            <a href="#">
+                <h1>{{ post.title}}</h1>
+                <div class="article-snippet">
+                    <p>{{post.snippet}}</p>
+                </div>
+            </a>
+            <div class="author-name">
+                <a href="#">
+                    {{ post.author }}
                 </a>
-                <p  class="date">20 Jan 2030</p>
+                <p>10 Hours ago</p>
+            </div>
+            <a href="#">
+                <img src="{{post.image.url}}" alt="artile-image">
+            </a>
+            {% endfor %}
+        </div>
+
+        <!-- right column post -->
+        <div class="right-col">
+            {% for post in similar_posts %}
+            <div class="blog-post">
+                <a class="blog-post-news" href="#">
+                    <img class="side-news" src="{{ post.image.url}}" alt="latest">
+                    <p>{{post.snippet|truncatewords:20}}</p>
+                </a>
             </div>
             {% endfor %}
         </div>
     </div>
 
-</section> -->
 
+    <!--- main section -->
+    <div class="main-section">
 
+   
+        <!-- politics section -->
+        <section class="politics">
+            <h2><span>Politics</span></h2>
 
-    <section class="politics">
-        
-        <h2><span>Politics</span></h2>
-        {% for post in similar_posts %}
-        <div class="politics-section">
-            <div class="politics-post">
-                <a class="politics-article-snippet" href="#">
-                    <img src="{{ post.image.url }}" alt="entertainment-man">
-                </a>
-                <div class="politics-article-snippet">
-                    <a href="#">
-                        <p>{{ post.snippet }}</p>
-                    </a>
-                </div>
-                <div class="politics-post-author">
-                    <a class="author" href="#">
-                        <img src="{{ post.image.url }}" alt="author">
-                        <p>{{ post.author }}</p>
-                    </a>
-                    <p  class="date">20 Jan 2030</p>
-                </div>
-            </div>
-        </div>
-        {%  endfor %}
-    </section>
-
-
-
-
-
-
-
-    <section class="entertainment">
-    <h2><span>Entertainment</span></h2>
-
-    <div class="entertainment-section">
-        <div class="entertainment-section-card">
-            <a class="entertainment-news-img" href="#">
-                {% for post in similar_posts %}
-                <img src="{{ post.image.url  }}" alt="entertainment">
-                <p class="entertainment-article-snippet">{{ post.snippet }}</p>
-            </a>
-            <div class="entertainment-author-profile">
-                <div class="author-details-entertainment">
-                    <a class="author-entertainment" href="#">
-                        <img class="author" src="{{ post.image.url }}" alt="author">
-                        <p>James Author</p>
-                    </a>
-                    <p class="date">20 Jan 2030</p>
-                </div>
+            <div class="politics-card">
+                {% for post in trending_posts %}
+                    <div class="politics-card-info">
+                        <a class="politics-card-snippet" href="#">
+                            <img src="{{ post.image.url }}"  alt="image">
+                            <h3>{{ post.title }}</h3>
+                        </a>
+                        <div class="card-info">
+                            <a class="author" href="#">
+                                <img src="{{ post.image.url }}" alt="author">
+                                <p class="author-info">{{ post.author }}</p>
+                            </a>
+                            <p  class="date">20 Jan 2030</p>
+                        </div>
+                    </div> 
                 {% endfor %}
             </div>
-        </div>
+        </section>
 
-        <!-- <div class="entertainment-section-card">
-            <a class="entertainment-news-img" href="#">
-                <img src="/images/ent4.png" alt="entertainment">
-                <p class="entertainment-article-snippet"> Rihanna reveals adorable baby boy on tiktok Two-Part Epic Space Opera</p>
-            </a>
-            <div class="entertainment-author-profile">
-                <div class="author-details-entertainment">
-                    <a class="author-entertainment" href="#">
-                        <img class="author" src="images/po1.png" alt="author">
-                        <p>James Author</p>
-                    </a>
-                    <p class="date">20 Jan 2030</p>
-                </div>
-            </div>
-        </div>
-<!--  -->
-        <div class="entertainment-section-card">
-            <a class="entertainment-news-img" href="#">
-                <img src="/images/ent2.png" alt="entertainment">
-                <p class="entertainment-article-snippet"> Rihanna reveals adorable baby boy on tiktok</p>
-            </a>
-            <div class="entertainment-author-profile">
-                <div class="author-details-entertainment">
-                    <a class="author-entertainment" href="#">
-                        <img class="author" src="images/po1.png" alt="author">
-                        <p>James Author</p>
-                    </a>
-                    <p class="date">20 Jan 2030</p>
-                </div>
-            </div>
-        </div> -->
 
-        <!-- <div class="entertainment-section-card">
-            <a class="entertainment-news-img" href="#">
-                <img src="/images/ent3.png" alt="entertainment">
-                <p class="entertainment-article-snippet"> Rihanna reveals adorable baby boy on tiktok</p>
-            </a>
-            <div class="entertainment-author-profile">
-                <div class="author-details-entertainment">
-                    <a class="author-entertainment" href="#">
-                        <img class="author" src="images/po1.png" alt="author">
-                        <p>James Author</p>
-                    </a>
-                    <p class="date">20 Jan 2030</p>
-                </div>
-            </div>
-        </div>
+        <!-- entertainment section -->
+
+
+
+
+
+
+
+
+
+
+
     </div>
-    </section> -->
-
-
-    <section class="how-to">
-        <h2><span>How To</span></h2>
-
-        <div class="how-to-section">
-            <div class="how-to-section-card">
-                <a class="how-to-news-img" href="#">
-                    <img src="/images/how1.png" alt="how-to-image">
-                    <p class="how-to-article-snippet"> Rihanna reveals adorable baby boy on tiktok</p>
-                </a>
-                <div class="how-to-author-profile">
-                    <div class="author-details-how-to">
-                        <a class="author-how-to" href="#">
-                            <img class="author" src="images/ent.png" alt="author">
-                            <p>James Author</p>
-                        </a>
-                        <p class="how-to-date">20 Jan 2030</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="how-to-section-card">
-                <a class="how-to-news-img" href="#">
-                    <img src="/images/how2.png" alt="how-to-image">
-                    <p class="how-to-article-snippet"> Rihanna reveals adorable baby boy on tiktok</p>
-                </a>
-                <div class="how-to-author-profile">
-                    <div class="author-details-how-to">
-                        <a class="author-how-to" href="#">
-                            <img class="author" src="images/ent2.png" alt="author">
-                            <p>James Author</p>
-                        </a>
-                        <p class="how-to-date">20 Jan 2030</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="how-to-section-card">
-                <a class="how-to-news-img" href="#">
-                    <img src="/images/how3.png" alt="how-to-image">
-                    <p class="how-to-article-snippet"> Rihanna reveals adorable baby boy on tiktok</p>
-                </a>
-                <div class="how-to-author-profile">
-                    <div class="author-details-how-to">
-                        <a class="author-how-to" href="#">
-                            <img class="author" src="images/ent3.png" alt="author">
-                            <p>James Author</p>
-                        </a>
-                        <p class="how-to-date">20 Jan 2030</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="how-to-section-card">
-                <a class="how-to-news-img" href="#">
-                    <img src="/images/how4.png" alt="how-to-image">
-                    <p class="how-to-article-snippet"> Rihanna reveals adorable baby boy on tiktok</p>
-                </a>
-                <div class="how-to-author-profile">
-                    <div class="author-details-how-to">
-                        <a class="author-how-to" href="#">
-                            <img class="author" src="images/ent4.png" alt="author">
-                            <p>James Author</p>
-                        </a>
-                        <p class="how-to-date">20 Jan 2030</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-</div>
-
-
-{% endblock content %}
+{% endblock %}

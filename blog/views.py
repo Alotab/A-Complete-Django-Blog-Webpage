@@ -12,8 +12,7 @@ def post_list(request):
     trending_posts = Post.published.all().order_by('-publish')[:4]
     latest_post = Post.published.all().order_by('-publish')[:1]
     top_stories = Post.published.all().order_by('-publish')[5:9]
-    similar_posts = Post.objects.prefetch_related().filter(tags__name__in=['Tech'])[:4]
+    similar_posts = Post.published.prefetch_related().filter(tags__name__in=['Tech'])[:3]
 
     return render(request, 'blog/home.html', {'posts': posts, 'trending_posts': trending_posts, 'latest_post':latest_post, 'similar_posts': similar_posts})
-
 

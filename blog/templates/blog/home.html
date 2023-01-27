@@ -11,7 +11,7 @@
             <p class="side-Trending">Trending</p>
             {% for post in trending_posts %}
             <div class="trending-post">
-                <a href="#">
+                <a href="{{ post.get_absolute_url }}">
                     <h2 class="trending-headline">{{ post.title }}</h2>
                 </a>
                 <p class="time-post">2 mins ago</p>
@@ -22,7 +22,7 @@
         <!-- middle column post -->
         <div class="middle-col">
             {% for post in latest_post %}
-            <a href="#">
+            <a href="{{ post.get_absolute_url }}">
                 <h1>{{ post.title}}</h1>
                 <div class="article-snippet">
                     <p>{{post.snippet}}</p>
@@ -34,7 +34,7 @@
                 </a>
                 <p>10 Hours ago</p>
             </div>
-            <a href="#">
+            <a href="{{ post.get_absolute_url }}">
                 <img src="{{post.image.url}}" alt="artile-image">
             </a>
             {% endfor %}
@@ -44,7 +44,7 @@
         <div class="right-col">
             {% for post in top_stories %}
             <div class="blog-post">
-                <a class="blog-post-news" href="#">
+                <a class="blog-post-news" href="{{ post.get_absolute_url }}">
                     <img class="side-news" src="{{ post.image.url}}" alt="latest">
                     <p>{{post.snippet|truncatewords:20}}</p>
                 </a>
@@ -65,12 +65,12 @@
             <div class="politics-card">
                 {% for post in politics_posts %}
                     <div class="politics-card-info">
-                        <a class="politics-card-snippet" href="#">
+                        <a class="politics-card-snippet" href="{{ post.get_absolute_url }}">
                             <img src="{{ post.image.url }}"  alt="image">
                             <h3>{{ post.title }}</h3>
                         </a>
                         <div class="card-info">
-                            <a class="author" href="#">
+                            <a class="author" href="{{ post.get_absolute_url }}">
                                 <img src="{{ post.image.url }}" alt="author">
                                 <p class="author-info">{{ post.author }}</p>
                             </a>

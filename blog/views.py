@@ -3,7 +3,7 @@ from .models import Post
 from django.db.models import Count
 import random
 from taggit.models import Tag
-from pprint import pprint
+from django.views.generic import DetailView
 
 
 # Create your views here.
@@ -27,4 +27,20 @@ def post_list(request):
                 'politics_posts': politics_posts,
                 'entertainment_posts': entertainment_posts,
                 'tech_posts': tech_posts})
+
+
+
+
+
+def post_detail(request, year, month, day, post):
+    post =  get_object_or_404(Post, 
+                                slug=post,
+                                publish__year=year,
+                                publish__month=month,
+                                publish__day=day)
+    post_tags_id = post.tags.values_list('id', flat=True)
+    similar_posts = Post.published.filter(tags__in=post_tags_id).exclude(id=post.id)
+    similar_posts = similar_posts.annotate(same_tags=Count('tags')).order_by('-same_tags', '-publish')[:6]
+    return render(request, 'blog/detail.html', {'post': post, 'similar_posts': similar_posts})
+
 

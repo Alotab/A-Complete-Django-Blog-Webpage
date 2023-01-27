@@ -42,7 +42,7 @@
 
         <!-- right column post -->
         <div class="right-col">
-            {% for post in similar_posts %}
+            {% for post in top_stories %}
             <div class="blog-post">
                 <a class="blog-post-news" href="#">
                     <img class="side-news" src="{{ post.image.url}}" alt="latest">
@@ -63,7 +63,7 @@
             <h2><span>Politics</span></h2>
 
             <div class="politics-card">
-                {% for post in trending_posts %}
+                {% for post in politics_posts %}
                     <div class="politics-card-info">
                         <a class="politics-card-snippet" href="#">
                             <img src="{{ post.image.url }}"  alt="image">
@@ -83,16 +83,50 @@
 
 
         <!-- entertainment section -->
+        <section class="entertainment">
+            <h2><span>Entertainment</span></h2>
+
+            <div class="entertainment-card">
+                {% for post in entertainment_posts %}
+                    <div class="entertainment-card-info">
+                        <a class="entertainment-card-snippet" href="#">
+                            <img src="{{ post.image.url }}"  alt="image">
+                            <h3>{{ post.title }}</h3>
+                        </a>
+                        <div class="card-info">
+                            <a class="entertainment-author" href="#">
+                                <img src="{{ post.image.url }}" alt="author">
+                                <p class="author-info">{{ post.author }}</p>
+                            </a>
+                            <p  class="date">20 Jan 2030</p>
+                        </div>
+                    </div> 
+                {% endfor %}
+            </div>
+        </section>
 
 
+           <!-- how-to section -->
+           <section class="tech">
+            <h2><span>Tech</span></h2>
 
-
-
-
-
-
-
-
-
+            <div class="tech-card">
+                {% for post in tech_posts %}
+                    <div class="tech-card-info">
+                        <a class="tech-card-snippet" href="#">
+                            <img src="{{ post.image.url }}"  alt="image">
+                            <h3>{{ post.title }}</h3>
+                        </a>
+                        <div class="card-info">
+                            <a class="tech-author" href="#">
+                                <img src="{{ post.image.url }}" alt="author">
+                                <p class="author-info">{{ post.author }}</p>
+                            </a>
+                            <p  class="date">20 Jan 2030</p>
+                        </div>
+                    </div> 
+                {% endfor %}
+            </div>
+        </section>
     </div>
 {% endblock %}

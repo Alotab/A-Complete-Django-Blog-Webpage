@@ -19,6 +19,7 @@ a {
     
 }
 
+/* header and navigation */
 .wrapper {
     max-width: 1380px;
     margin: 0 auto;
@@ -240,7 +241,7 @@ nav ul li a.active:before {
 }
 
 
-/*  middle column post */
+/*  right column post */
 .right-col{
     width: 38%;
 }
@@ -280,30 +281,135 @@ nav ul li a.active:before {
 
 
 
-
-
-
-
-
-
-
-
-
-.politics-post-author .date {
-    font-size: 12px;
-} 
-
-
-/* Enrtertainment section */
-
-.entertainment {
+/* main section */
+.main-section {
     margin-top: 5em;
 }
 
-.entertainment h2 span{
-    font-size: 18px;
+
+/* politics section */
+.politics h2 {
+    font-size: 15px;
+    text-align: center;
+    color: white;
+    font-family: Playfair;
+    text-transform: uppercase;
+    position: relative;
+}
+
+
+.politics h2 span {
     background-color: #0084bd;
     padding: 5px 10px;
+} 
+
+.politics h2:before {
+    position: absolute;
+    content: "";
+    display: block;
+    text-align: center;
+    height: 1px;
+    width: 40%;
+    background: #0084bd;
+    left: 83px;
+    top: 50%;
+}
+
+.politics h2:after {
+    position: absolute;
+    content: "";
+    display: block;
+    text-align: center;
+    height: 1px;
+    width: 40%;
+    background: #0084bd;
+    right: 83px;
+    top: 50%;
+}
+
+
+
+
+.politics-card  {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1.5em;
+    margin-top: 4em;
+    /* border: 3px solid red; */
+} 
+
+.politics-card-info img {
+    height: 390px;
+    width: 300px;
+    border-radius: 10px;
+    justify-content: center;
+    display: block;
+    object-fit: cover;
+}
+
+.author {
+    display: flex;
+    gap: 1.2em;
+    align-items: center;
+}
+
+.author img {
+    height: 35px;
+    width: 35px;
+    border-radius: 50%;
+    border: 2px solid rgb(15, 117, 200);
+    margin: 0;
+    background-size: cover;
+    cursor: pointer;
+}
+
+
+.card-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1.5em;
+}
+
+.politics-card-info .card-info .author-info {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 13px;
+    color: rgb(127, 114, 114);
+}
+
+.politics-card-info .card-info .author-info:first-letter {
+    text-transform: uppercase;
+}
+
+.politics-card-info h3 {
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: left;
+    /* font-size: 1.7rem; */
+    font-size: 1.5rem;
+    color: black;
+    font-weight: 500;
+    margin-top: 1.5em;
+    cursor: pointer;
+}
+
+.politics-card-info p{
+    color: black;
+}
+
+
+.politics-card-info {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    width: 300px;
+    /* overflow: hidden; */
+}
+
+
+/* entertainment section */
+
+.entertainment {
+    margin-top: 5em;
 }
 
 .entertainment h2 {
@@ -316,11 +422,10 @@ nav ul li a.active:before {
     
 }
 
-.entertainment-section-card {
-    gap: 5px;
-    margin: 0;
-    width: 300px;
-}
+.entertainment h2 span {
+    background-color: #0084bd;
+    padding: 5px 10px;
+} 
 
 .entertainment h2:after {
     position: absolute;
@@ -346,78 +451,89 @@ nav ul li a.active:before {
     top: 50%;
 }
 
-.entertainment-section {
-    display: flex;
-    justify-content: space-between;
-    gap: 1px;
-    margin-top: 4em;
-}
 
-.author-details-entertainment {
+.entertainment-card {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-top: 10px;
+    gap: 1.5em;
+    margin-top: 4em;
+    /* border: 3px solid red; */
 }
 
-.entertainment-news-img img {
+.entertainment-card-info {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    width: 300px;
+    /* overflow: hidden; */
+}
+
+.entertainment-card-info h3 {
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: left;
+    /* font-size: 1.7rem; */
+    font-size: 1.5rem;
+    color: black;
+    font-weight: 500;
+    margin-top: 1.5em;
+    cursor: pointer;
+}
+
+.entertainment-card-info img {
     height: 390px;
     width: 300px;
-    border-radius: 5px;
+    border-radius: 10px;
+    justify-content: center;
     display: block;
-    margin: 0;
+    object-fit: cover;
 }
 
-
-.author-entertainment {
-    display: flex;
-    align-items: center;
-    gap: 1em;
+.entertainment-card-info p {
+    color: black;
 }
 
-.author-entertainment p {
-    font-size: 13px;
+.entertainment-card-info .card-info .author-info {
     font-family: Arial, Helvetica, sans-serif;
+    font-size: 13px;
     color: rgb(127, 114, 114);
 }
 
-.date {
-    font-size: 12px;
+.entertainment-card-info .card-info .author-info:first-letter {
+    text-transform: uppercase;
 }
 
-.author-entertainment img {
+.entertainment-author img {
     height: 35px;
     width: 35px;
     border-radius: 50%;
     border: 2px solid rgb(15, 117, 200);
     margin: 0;
     background-size: cover;
-    display: block;
-    /* margin-left: auto;
-    margin-right: auto; */
+    cursor: pointer;
+
 }
 
-.entertainment-article-snippet {
-    color: black;
-    font-size: 18px;
-    margin-top: 10px;
+.entertainment-author {
+    display: flex;
+    gap: 1.2em;
+    align-items: center;
 }
 
 
-/* how-to section */
 
+/* tech section */
 
-.how-to {
+.tech {
     margin-top: 5em;
 }
 
-.how-to h2 span {
+.tech h2 span {
     font-size: 18px;
     background-color: #0084bd;
     padding: 5px 10px;
 }
 
-.how-to h2 {
+.tech h2 {
     font-size: 15px;
     text-align: center;
     color: white;
@@ -426,7 +542,7 @@ nav ul li a.active:before {
     position: relative;
 }
 
-.how-to h2:after {
+.tech h2:after {
     position: absolute;
     content: "";
     display: block;
@@ -438,7 +554,7 @@ nav ul li a.active:before {
     top: 50%;
 }
 
-.how-to h2:before {
+.tech h2:before {
     position: absolute;
     content: "";
     display: block;
@@ -450,73 +566,71 @@ nav ul li a.active:before {
     top: 50%;
 }
 
-.how-to-section {
+.tech-card {
     display: flex;
     justify-content: space-between;
-    gap: 1px;
+    align-items: center;
+    gap: 1.5em;
     margin-top: 4em;
+    /* border: 3px solid red; */
 }
 
-.how-to-section-card {
-    gap: 5px;
-    margin: 0;
+.tech-card-info {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
     width: 300px;
+    /* overflow: hidden; */ 
 }
 
+.tech-card-info h3 {
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: left;
+    font-size: 1.5rem;
+    color: black;
+    font-weight: 500;
+    margin-top: 1.5em;
+    cursor: pointer;
+}
 
-.how-to-news-img img {
+.tech-card-info img {
     height: 390px;
     width: 300px;
-    border-radius: 5px;
+    border-radius: 10px;
+    justify-content: center;
     display: block;
-    margin: 0;
+    object-fit: cover;
 }
 
-.author-details-how-to {
+.tech-card-info p {
+    color: black;
+}
+
+.tech-author {
     display: flex;
-    justify-content: space-between;
+    gap: 1.2em;
     align-items: center;
-    margin-top: 10px;
 }
 
-.author-how-to {
-    display: flex;
-    align-items: center;
-    gap: 1em;
-}
-
-.author-how-to img {
+.tech-author img {
     height: 35px;
     width: 35px;
     border-radius: 50%;
     border: 2px solid rgb(15, 117, 200);
     margin: 0;
     background-size: cover;
-    display: block;
+    cursor: pointer;
 }
 
-.author-how-to p {
-    font-size: 13px;
+.tech-card-info .card-info .author-info:first-letter {
+    text-transform: uppercase;
+}
+
+.tech-card-info .card-info .author-info {
     font-family: Arial, Helvetica, sans-serif;
+    font-size: 13px;
     color: rgb(127, 114, 114);
 }
 
-.author-details-how-to {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: 10px;
-}
-
-.how-to-date {
-    font-size: 12px;
-}
-
-.how-to-article-snippet {
-    color: black;
-    font-size: 18px;
-    margin-top: 10px;
-}
 
 
 /* footer section */
@@ -590,131 +704,4 @@ footer {
 
 .form-box button:hover {
     background: #2e54d3;
-}
-
-
-
-/* main section */
-.main-section {
-    margin-top: 5em;
-}
-
-
-/* politics section */
-.politics h2 {
-    font-size: 15px;
-    text-align: center;
-    color: white;
-    font-family: Playfair;
-    text-transform: uppercase;
-    position: relative;
-}
-
-
-.politics h2 span {
-    background-color: #0084bd;
-    padding: 5px 10px;
-} 
-
-.politics h2:before {
-    position: absolute;
-    content: "";
-    display: block;
-    text-align: center;
-    height: 1px;
-    width: 40%;
-    background: #0084bd;
-    left: 83px;
-    top: 50%;
-}
-
-.politics h2:after {
-    position: absolute;
-    content: "";
-    display: block;
-    text-align: center;
-    height: 1px;
-    width: 40%;
-    background: #0084bd;
-    right: 83px;
-    top: 50%;
-}
-
-
-
-
-.politics-card {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 1.5em;
-    margin-top: 4em;
-    /* border: 3px solid red; */
-
-} 
-
-.politics-card-info img {
-    height: 390px;
-    width: 300px;
-    border-radius: 10px;
-    justify-content: center;
-    display: block;
-    object-fit: cover;
-}
-
-.author {
-    display: flex;
-    gap: 1.2em;
-    align-items: center;
-}
-
-.author img {
-    height: 35px;
-    width: 35px;
-    border-radius: 50%;
-    border: 2px solid rgb(15, 117, 200);
-    margin: 0;
-    background-size: cover;
-    cursor: pointer;
-}
-
-
-.card-info {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: 1.5em;
-}
-
-.politics-card-info .card-info .author-info {
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 13px;
-    color: rgb(127, 114, 114);
-}
-
-.politics-card-info .card-info .author-info:first-letter {
-    text-transform: uppercase;
-}
-
-.politics-card-info h3 {
-    font-family: Arial, Helvetica, sans-serif;
-    text-align: left;
-    /* font-size: 1.7rem; */
-    font-size: 1.5rem;
-    color: black;
-    font-weight: 500;
-    margin-top: 1.5em;
-    cursor: pointer;
-}
-
-.politics-card-info p{
-    color: black;
-}
-
-
-.politics-card-info {
-    word-wrap: break-word;
-    overflow-wrap: break-word;
-    width: 300px;
-    /* overflow: hidden; */
 }

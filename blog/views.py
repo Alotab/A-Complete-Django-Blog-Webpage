@@ -3,7 +3,7 @@ from .models import Post
 from django.db.models import Count
 import random
 from taggit.models import Tag
-from django.views.generic import DetailView
+
 
 
 # Create your views here.

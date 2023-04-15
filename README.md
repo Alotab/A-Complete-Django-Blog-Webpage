@@ -2,4 +2,4 @@
 
 This is a complete Django Blog app that can be used in production. It has most of the functionalities of a standard blog news app.
 
-clone it and make it your own!
+Clone it and make it your own!

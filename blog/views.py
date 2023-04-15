@@ -5,7 +5,6 @@ import random
 from taggit.models import Tag
 
 
-
 # Create your views here.
 
 def post_list(request):
